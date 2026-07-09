@@ -1,23 +1,41 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro'; 
+
+const pageTitle = "about";
+
+const identity = {
+    name: "pamphlette",
+    country: "French Samoa",
+    occupation: "ballet person",
+    hobbies: ["photography", "birdwatching", "baseball"],
+};
+const skills = ["HTML", "CSS", "Yer mum"]
+
+const happy = true;
+const done = false;
+const goal = 3;
 
 ---
+<BaseLayout pageTitle={pageTitle}>
+    <h2>myself, etc</h2>
+    
+    <p>some facts:</p>
+    <ul>
+        <li>name: {identity.name}</li>
+        <li>country: {identity.country}</li>
+        <li>job: {identity.occupation}</li>
+        <li>two hobbies: {identity.hobbies[0]} and {identity.hobbies[2]}</li>
+    </ul>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <a href="/">home</a>
-        <a href="/about/">about</a>
-        <a href="/blog">blog</a>
-        
-		<h1>about my ass</h1>
-        <h2>and the metal it's made from</h2>
-        <p><img src="bender.png"></img></p>
-	</body>
-</html>
+    <p>my skills:</p>
+    <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be alive</p>}
+    {done && <p> I am done with the foundation (it was a lot of books)</p>}
+    {goal == 3 ? <p>I wanna be done in 3 days</p> : <p>I don't wanna be done in 3 days</p>}
+
+    <p><img src="/bender.png"></p>
+</BaseLayout>
+

@@ -1,0 +1,45 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import '../styles/global.css'
+
+const {pageTitle} = Astro.props;
+
+const skill_color = "teal";
+const font_weight = "bold";
+const text_transform = "uppercase";
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+                <style is:global define:vars={{skill_color, font_weight, text_transform}}>
+            h1 {
+                color: red;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skill_color);
+                font-weight: var(--font_weight);
+                text-transform: var(--text_transform);
+            }
+        </style>
+	</head>
+
+	<body>
+		<Header />
+		<h1>{pageTitle}</h1>
+        <slot />
+		<Footer />
+		<script>
+			import '../scripts/menu.js';
+		</script>
+	</body>
+</html>
