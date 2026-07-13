@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: 'a blog post'
 pubDate: 2026-09-09
 description: 'first post'
@@ -8,13 +9,9 @@ image:
     alt: 'A delicious piece of teramisu'
 tags: ["cake", "tasty treat"]
 ---
-# Blog Post
-
-Published on: 2022-07-01
+s## h2 example
 
 Welcome to _new blog_ where blog
-
-## h2 example
 
 1. **num num**: Normal text
 

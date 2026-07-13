@@ -1,14 +1,17 @@
 html {
     background-color: #B0BA99;
-    font-family: sans-serif;
+    font-family: Courier;
 }
 
 body {
     margin: 0 auto;
-    width: 100%;
+    line-height: 1.0;
+}
+
+main {
+    margin-left: auto;
     max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
+    padding: 3rem;
 }
 
 * {
@@ -22,30 +25,58 @@ h1 {
 
 /* nav styles */
 
+header {
+  width: 100%;
+  background: #3A4D39;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.site-name,
+.browser-time {
+  flex: none;
+  color: #B0BA99;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+nav {
+  flex: 1;                 
+  margin: 0;              
+  padding: 4px 0;
+  min-height: 0;
+}
+
 .menu {
-    background-color:darkolivegreen;
-    border:black;
+    margin: 0 auto;
+    background-color:#3A4D39;
     color:bisque;
     font-size:1.2rem;
     font-weight: bold;
     padding: 5px 10px;
+    border: none;
 }
 
 .nav-links {
-  width: 100%;
   display: none;
-  margin: 0;
+  margin: 2; 
 }
 
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
+  padding: 2px;
+  margin-inline: .5rem;
+
   text-decoration: none;
-  font-size: 1.2rem;
   font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
+  text-transform: lowercase;
+  color: #3A4D39;
+  background-color: #B0BA99;
 }
 
 .nav-links a:hover,
@@ -54,21 +85,20 @@ h1 {
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
-    display: unset;
+    display: block;
+    flex-basis: 100%;
 }
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
+    padding: 2px 3px;
   }
 
   .menu {
