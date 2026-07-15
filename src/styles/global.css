@@ -5,13 +5,16 @@ html {
 
 body {
     margin: 0 auto;
-    line-height: 1.0;
+    min-height: 100dvh;
+    display:flex;
+    flex-direction: column;
+
 }
 
 main {
-    margin-left: auto;
+    flex: 1;
     max-width: 80ch;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 * {
@@ -20,7 +23,8 @@ main {
 
 h1 {
     margin: 1rem 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: teal;
 }
 
 /* nav styles */
@@ -49,6 +53,7 @@ nav {
   margin: 0;              
   padding: 4px 0;
   min-height: 0;
+  text-align: center;
 }
 
 .menu {
@@ -56,8 +61,8 @@ nav {
     background-color:#3A4D39;
     color:bisque;
     font-size:1.2rem;
-    font-weight: bold;
-    padding: 5px 10px;
+    /* font-weight: bold; */
+    padding: 5px 5px;
     border: none;
 }
 
@@ -69,7 +74,7 @@ nav {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 2px;
+  padding: 2px 3px;
   margin-inline: .5rem;
 
   text-decoration: none;
@@ -79,9 +84,15 @@ nav {
   background-color: #B0BA99;
 }
 
+.hotlink:hover{
+  background-color: #FE5DCC;
+  color: white;
+}
+
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: #FE5DCC;
+  color: white;
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
@@ -104,4 +115,28 @@ nav {
   .menu {
     display: none;
   }
+
+  main {
+    margin-left: 4rem;
+    flex: 1;
+    max-width: 80ch;
+    padding: 3rem;
+  }
+
+}
+
+/* footer style  */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.7rem;
+}
+
+footer p {
+  margin: 0;                
 }

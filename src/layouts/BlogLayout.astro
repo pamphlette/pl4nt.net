@@ -19,12 +19,9 @@ const text_transform = "uppercase";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+        
 		<title>{pageTitle}</title>
                 <style is:global define:vars={{skill_color, font_weight, text_transform}}>
-            h1 {
-                color: red;
-                font-size: 4rem;
-            }
             .skill {
                 color: var(--skill_color);
                 font-weight: var(--font_weight);
@@ -38,11 +35,11 @@ const text_transform = "uppercase";
         <main>
             <h1>{pageTitle}</h1>
             <slot />
-            <Footer />
             <script>
                 import '../scripts/menu.js';
             </script>
         </main>
+        <Footer />
 	</body>
 
 </html>

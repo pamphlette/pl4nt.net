@@ -1,12 +1,12 @@
 ---
 const {platform, url} = Astro.props;
 ---
-<a href={`https://www.${platform}.com/${url}`}>{platform}</a>
+<a class="hotlink" href={`https://www.${platform}.com/${url}`}>{platform}</a>
 
 <style>
     a {
-        padding: 0.5rem 1rem;
-        color:teal;
+        /* padding: 0.5rem 1rem; */
+        color: #4F6F52;
         text-decoration: none;
     }
 </style>

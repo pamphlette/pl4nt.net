@@ -1,6 +1,7 @@
 ---
 import Menu from './Menu.astro';
 import Navigation from './Navigation.astro';
+
 ---
 <header>
     <span class="site-name">pl4nt.net</span>
@@ -8,5 +9,15 @@ import Navigation from './Navigation.astro';
         <Menu />
         <Navigation />
     </nav>
-    <span class="browser-time">12:27am</span>
+    <span class="browser-time" id="local-time"></span>
+        <script>
+            const elem = document.getElementById('local-time');
+  
+            if (elem) {const update = () => {
+                    elem.textContent = new Date().toLocaleTimeString("en-US", {timeStyle: "short", hour12: false});
+                };
+
+                update();
+                setInterval(update, 1000); }
+        </script>
 </header>
